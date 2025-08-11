@@ -1,0 +1,134 @@
+Include:
+  - Datasources
+  - Background/Light
+  - Resolutions/Medium
+
+Animation:
+  Speed: 100
+  Crop: [-1000, 1500]
+
+WaveformToVolume:
+  Polarizations: ["Cross"]
+
+Trajectories:
+  - Name: BH1
+    Objects:
+      - Sphere:
+          Radius: 10
+        Representation:
+          AmbientColor: [0., 0., 0.]
+          DiffuseColor: [0., 0., 0.]
+          Opacity: 1
+#        Visibility:
+#          Start: 700
+#          End: 2200
+    Tail:
+      LineWidth: 1
+      ColorBy: Age
+#      Visibility:
+#        Start: 1300
+#        End: 2200
+#        FadeIn:
+#          TimeMode: Scene
+#          Time: 300
+  - Name: BH2
+    Objects:
+      - Sphere:
+          Radius: 10
+        Representation:
+          AmbientColor: [0., 0., 0.]
+          DiffuseColor: [0., 0., 0.]
+          Opacity: 1
+#        Visibility:
+#          Start: 700
+#          End: 2200
+    Tail:
+      LineWidth: 1
+      ColorBy: Age
+#      Visibility:
+#        Start: 1300
+#        End: 2200
+#        FadeIn:
+#          TimeMode: Scene
+#          Time: 300
+
+CameraShots:
+  - Position: [800, 0, 400]
+    ViewUp: [0, 0, 1]
+    FocalPoint: [0., 0., 0.]
+    ViewAngle: 60.
+  - Time: 1000
+    SwingDuration: 10
+    #Position: [-872.363990985196, 0.6406155004891971, -432.35171763979787, -522.3428013395041, -661.630406826439, -483.5698340698338, 191.60807210553713, -820.9038579836979, -483.5698340698338, 761.2741591627348, -362.0199606922125, -362.0199606922125, -483.5698340698338, 757.6852772075579, 369.4723508619097, -483.5698340698338, 183.54392755210495, 822.7444463545577, -483.5698340698338, -528.8097431638867, 656.4731928140435, -483.5698340698338]
+    #Position: [[800, 0, 400], [498.79184148698687, 625.4651859744239, 400], [-178.01674716505147, 779.942329745459, 400], [-720.7750943219354, 347.1069912940467, 400], [-720.7750943219355, -347.1069912940464, 400], [-178.0167471650518, -779.942329745459, 400], [498.79184148698675, -625.4651859744242, 400], [800, 0, 400]]
+    Position: [[800.0, 0.0, 400.0], [650.210793366965, 815.3385460023741, 521.4285714285714], [-286.09834365811844, 1253.4787442337733, 642.8571428571429], [-1377.1952695079835, 663.2222869368392, 764.2857142857142], [-1596.00199457, -768.5940521511028, 885.7142857142858], [-448.22073839771974, -1963.783365966245, 1007.1428571428571], [1407.3055527668553, -1764.7053461421253, 1128.5714285714284], [2500.0, 0.0, 1250.0]]
+    ViewUp: [0, 0, 1]
+    FocalPoint: [0., 0., 0.]
+    ViewAngle: 60.
+
+TimeAnnotation:
+  Shift: 0
+  Scale: 0.01
+
+TimeAnnotationRepresentation:
+  Opacity: 1.
+  WindowLocation: 'Upper Right Corner'
+  FontFamily: 'Courier'
+  FontSize: 40
+  Color: [0.8,0.7,0.1]
+
+Annotations:
+  - Text: '$\gamma  = 1.1, \ \ \frac{m_1}{m_2} = 1, \ \ \frac{b}{m_1} = 50$'
+    Opacity: 1.
+    WindowLocation: 'Upper Left Corner'
+    FontFamily: 'Courier'
+    FontSize: 40
+    Color: [0.8,0.7,0.1]
+
+VolumeRepresentation:
+  ColorBy: Cross strain
+  ScalarOpacityUnitDistance: 1.
+
+TransferFunctions:
+  - Field: Cross strain
+    TransferFunction:
+      Peaks:
+        Colormap:
+          Name: Rainbow Uniform
+          #PolynomalTransform:
+            #Degree: 2.5
+            #Shift: -0.5
+        NumPeaks: 4  # A rainbow has 7 colors. No more, no less.
+        #Polynomial: 2
+        PolynomialOpacities: 2
+        FirstPeak:
+          Position: 0.00002
+          Opacity: 0.0015
+        LastPeak:
+          Position: 0.0001
+          Opacity: 0.04
+        AddNegatives: True
+    ScalarBar:
+      Title:
+        Name: 'Cross strain'
+        Color: [0., 0., 0.]
+      WindowLocation: 'Lower Right Corner'
+      Orientation: 'Horizontal'
+      UseCategories: True
+      Label:
+        Color: [0., 0., 0.]
+  - Field: Age
+    TransferFunction:
+      Linear:
+        Colormap:
+          Points:
+            - Position: -1
+              Color: [0., 0., 0.]
+            - Position: 1
+              Color: [0., 0., 0.]
+        Start:
+          Position: -1
+          Opacity: 1
+        End:
+          Position: 1
+          Opacity: 1

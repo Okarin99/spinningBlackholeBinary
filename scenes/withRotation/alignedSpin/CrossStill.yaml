@@ -1,0 +1,16 @@
+Base:
+  - Cross
+  - Resolutions/Medium
+
+Animation:
+  Replace:
+    FreezeTime:
+      Time: 1500
+      Interact: True
+
+Replace:
+  CameraShots:
+    - Position: [2500.0, 0.0, 1250.0]
+      ViewUp: [0, 0, 1]
+      FocalPoint: [0., 0., 0.]
+      ViewAngle: 60.
