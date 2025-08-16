@@ -1,0 +1,14 @@
+Replace:
+  Datasources:
+    Waveform:
+      File: Data/gravitationalBremsstrahlungWithRotationAlignedSpinInverted_SpinPart_COM.h5
+      Subfile: waveform
+    Trajectories:
+      BH1:
+        File: Data/gravitationalBremsstrahlungWithRotationAlignedSpinInverted_SpinPart_COM.h5
+        Subfile: trajectory1
+        CoordinatesDataset: position.dat
+      BH2:
+        File: Data/gravitationalBremsstrahlungWithRotationAlignedSpinInverted_SpinPart_COM.h5
+        Subfile: trajectory2
+        CoordinatesDataset: position.dat
